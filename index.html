@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>武林外传 - 同福客栈小剧场</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="stage-shell">
+        <header class="inn-sign">
+            <p class="eyebrow">七侠镇 · 同福客栈</p>
+            <h1>同福日常</h1>
+            <p class="subtitle">二十日客栈生活</p>
+        </header>
+
+        <nav class="day-nav" aria-label="客栈日程">
+            <div>
+                <p class="eyebrow">今日进度</p>
+                <strong id="navProgress">第 1 日 / 20 日</strong>
+            </div>
+            <button class="plain-btn" id="openEpisodesBtn" type="button">通关后回看</button>
+        </nav>
+
+        <main class="game-layout">
+            <section class="visual-stage" aria-label="同福客栈大堂">
+                <img class="inn-bg" src="images/inn-hall.svg" alt="同福客栈大堂">
+                <div class="stage-vignette"></div>
+                <div class="speaker-stand">
+                    <img id="currentPortrait" src="images/characters/image2/tong.png" alt="当前说话人物">
+                    <div class="speaker-tag">
+                        <span id="currentName">佟湘玉</span>
+                        <small id="currentRole">掌柜</small>
+                    </div>
+                </div>
+                <div class="stage-caption" id="stageCaption">今日客栈风平浪静，通常这就意味着马上要出事。</div>
+            </section>
+
+            <section class="notice-board" aria-labelledby="episodeTitle">
+                <div class="board-topline">
+                    <span id="episodeStep">第一幕</span>
+                    <button class="plain-btn" id="restartBtn" type="button">重开本集</button>
+                </div>
+
+                <h2 id="episodeTitle">麻烦客人</h2>
+                <p id="episodeText"></p>
+
+                <div class="dialogue-log story-dialogue" id="dialogueLog" aria-label="当前对话"></div>
+
+                <div class="choice-list" id="choiceList"></div>
+            </section>
+
+            <aside class="side-panel">
+                <section class="status-card">
+                    <p class="eyebrow">客栈状态</p>
+                    <div class="status-row">
+                        <span>传闻进度</span>
+                        <strong id="trustValue">0</strong>
+                    </div>
+                    <div class="status-row">
+                        <span>客栈氛围</span>
+                        <strong id="chaosValue">0</strong>
+                    </div>
+                    <div class="status-row">
+                        <span>人物记忆</span>
+                        <strong id="warmthValue">0</strong>
+                    </div>
+                </section>
+
+                <section class="collection-card">
+                    <p class="eyebrow">客栈传闻册</p>
+                    <div id="endingCollection" class="ending-collection"></div>
+                </section>
+            </aside>
+        </main>
+    </div>
+
+    <div class="modal" id="episodeModal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" id="closeEpisodeModal" type="button" aria-label="关闭">×</button>
+            <p class="eyebrow">通关回看</p>
+            <h2>同福二十日</h2>
+            <div class="episode-list" id="episodeList"></div>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
